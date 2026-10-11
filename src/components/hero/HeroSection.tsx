@@ -24,7 +24,7 @@ export const HeroSection: React.FC = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen pt-16 sm:pt-20 lg:pt-20 pb-12 flex flex-col justify-center overflow-hidden"
+      className="relative min-h-screen pt-28 sm:pt-20 lg:pt-20 pb-12 flex flex-col justify-center overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
         {/* Asymmetrical 2-Zone Editorial Grid */}
