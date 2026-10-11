@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Github, Linkedin, Copy, Check, FileText, ArrowUpRight } from 'lucide-react';
+import { Mail, Github, Linkedin, Copy, Check, ArrowUpRight } from 'lucide-react';
 import { SectionHeading } from '../ui/SectionHeading';
 import { portfolioData } from '../../data/portfolioData';
 
@@ -27,13 +27,6 @@ export const ContactSection: React.FC = () => {
       url: personal.socials.linkedin,
       handle: 'Atharva Gujarathi',
       color: 'hover:text-electric-blue hover:border-electric-blue/40',
-    },
-    {
-      name: 'Resume',
-      icon: FileText,
-      url: personal.resumeUrl,
-      handle: 'Download PDF',
-      color: 'hover:text-electric-violet hover:border-electric-violet/40',
     },
   ];
 
@@ -110,7 +103,7 @@ export const ContactSection: React.FC = () => {
             </div>
 
             {/* Social Channels: one aligned row */}
-            <div className="grid grid-cols-3 gap-2 sm:gap-3">
+            <div className="grid grid-cols-2 gap-2 sm:gap-3">
               {socials.map((social) => {
                 const Icon = social.icon;
                 return (
@@ -119,7 +112,7 @@ export const ContactSection: React.FC = () => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={social.name === 'Resume' ? 'Open resume (PDF) in a new tab' : `${social.name} profile (opens in a new tab)`}
+                    aria-label={`${social.name} profile (opens in a new tab)`}
                     className={`glass-card rounded-xl p-3 sm:p-4 min-w-0 flex flex-col justify-between border border-white/[0.06] transition-all duration-300 group ${social.color}`}
                   >
                     <div className="flex items-center justify-between mb-3 gap-1">
