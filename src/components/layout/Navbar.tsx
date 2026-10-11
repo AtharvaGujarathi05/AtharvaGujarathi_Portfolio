@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, FileText, ArrowUpRight } from 'lucide-react';
+import { Menu, X, Github, Linkedin, FileText, ArrowUpRight } from 'lucide-react';
 import { ThemeToggle } from '../ui/ThemeToggle';
 import { portfolioData } from '../../data/portfolioData';
 
@@ -47,28 +47,55 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Brand Logo / Monogram */}
-          <a
-            href="#hero"
-            onClick={(e) => handleNavClick(e, '#hero')}
-            className="group flex items-center gap-2.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-electric-blue rounded-lg py-1 px-1.5"
-            aria-label="Home - Atharva Gujarathi"
-          >
-            <div className="relative flex items-center justify-center w-9 h-9 rounded-xl bg-white/[0.04] border border-white/10 group-hover:border-electric-blue/50 transition-colors duration-300 overflow-hidden shadow-inner">
-              <span className="font-mono text-sm font-bold bg-gradient-to-r from-electric-blue to-electric-violet bg-clip-text text-transparent">
-                AG
-              </span>
-              <span className="absolute bottom-1 right-1 w-1 h-1 rounded-full bg-electric-blue animate-pulse" />
+          {/* Left Zone: Brand Logo / Monogram + Social Links (GitHub, LinkedIn) */}
+          <div className="flex items-center gap-2.5 sm:gap-4">
+            <a
+              href="#hero"
+              onClick={(e) => handleNavClick(e, '#hero')}
+              className="group flex items-center gap-2.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-electric-blue rounded-lg py-1 px-1.5"
+              aria-label="Home - Atharva Gujarathi"
+            >
+              <div className="relative flex items-center justify-center w-9 h-9 rounded-xl bg-white/[0.04] border border-white/10 group-hover:border-electric-blue/50 transition-colors duration-300 overflow-hidden shadow-inner">
+                <span className="font-mono text-sm font-bold bg-gradient-to-r from-electric-blue to-electric-violet bg-clip-text text-transparent">
+                  AG
+                </span>
+                <span className="absolute bottom-1 right-1 w-1 h-1 rounded-full bg-electric-blue animate-pulse" />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-sm font-bold tracking-tight text-white group-hover:text-electric-blue transition-colors">
+                  Atharva Gujarathi
+                </span>
+                <span className="text-[10px] font-mono text-slate-400 tracking-wider hidden sm:block">
+                  AI • DATA • SYSTEMS
+                </span>
+              </div>
+            </a>
+
+            {/* Subtle Divider */}
+            <div className="h-5 w-px bg-white/10 mx-0.5 sm:mx-1" aria-hidden="true" />
+
+            {/* GitHub and LinkedIn Links in Top Navigation */}
+            <div className="flex items-center gap-1.5">
+              <a
+                href={portfolioData.personal.socials.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative p-2 rounded-xl bg-white/[0.04] hover:bg-white/[0.09] border border-white/[0.08] hover:border-electric-blue/50 text-slate-300 hover:text-white transition-all duration-200 shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-electric-blue"
+                aria-label="Atharva Gujarathi GitHub Profile (opens in a new tab)"
+              >
+                <Github className="w-4 h-4 transition-transform duration-200 group-hover:scale-110 group-hover:text-electric-blue" />
+              </a>
+              <a
+                href={portfolioData.personal.socials.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative p-2 rounded-xl bg-white/[0.04] hover:bg-white/[0.09] border border-white/[0.08] hover:border-electric-violet/50 text-slate-300 hover:text-white transition-all duration-200 shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-electric-violet"
+                aria-label="Atharva Gujarathi LinkedIn Profile (opens in a new tab)"
+              >
+                <Linkedin className="w-4 h-4 transition-transform duration-200 group-hover:scale-110 group-hover:text-electric-violet" />
+              </a>
             </div>
-            <div className="flex flex-col">
-              <span className="text-sm font-bold tracking-tight text-white group-hover:text-electric-blue transition-colors">
-                ATHARVA GUJARATHI
-              </span>
-              <span className="text-[10px] font-mono text-slate-400 tracking-wider hidden sm:block">
-                AI • DATA • SYSTEMS
-              </span>
-            </div>
-          </a>
+          </div>
 
           {/* Desktop Navigation Links */}
           <nav className="hidden md:flex items-center gap-1 bg-white/[0.03] border border-white/[0.07] px-4 py-1.5 rounded-full backdrop-blur-xl">
@@ -98,33 +125,25 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
             })}
           </nav>
 
-          {/* Desktop Right CTA: Resume Button */}
+          {/* Desktop Right CTA: Resume + Theme Toggle */}
           <div className="hidden md:flex items-center gap-3">
-            <ThemeToggle />
             <a
               href={portfolioData.personal.resumeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold tracking-wide bg-gradient-to-r from-electric-blue/15 to-electric-violet/15 hover:from-electric-blue/25 hover:to-electric-violet/25 text-white border border-electric-blue/30 hover:border-electric-blue/60 transition-all duration-300 shadow-sm hover:shadow-glow-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-electric-blue"
+              download="Atharva_Gujarathi_Resume.pdf"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold tracking-wide bg-white/[0.04] hover:bg-white/[0.08] text-white border border-white/10 hover:border-electric-blue/40 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-electric-blue"
             >
-              <FileText className="w-3.5 h-3.5 text-electric-blue" />
+              <FileText className="w-4 h-4 text-electric-blue" />
               <span>Resume</span>
               <ArrowUpRight className="w-3.5 h-3.5 text-slate-400" />
             </a>
+            <ThemeToggle />
           </div>
 
-          {/* Mobile Hamburger Toggle Button */}
+          {/* Mobile Actions: Theme Toggle + Menu Hamburger */}
           <div className="md:hidden flex items-center gap-2">
             <ThemeToggle />
-            <a
-              href={portfolioData.personal.resumeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-white/5 border border-white/10 text-electric-blue"
-              aria-label="View Resume"
-            >
-              Resume
-            </a>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -167,16 +186,19 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
                   </a>
                 );
               })}
-
               <a
                 href={portfolioData.personal.resumeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                download="Atharva_Gujarathi_Resume.pdf"
                 onClick={() => setMobileMenuOpen(false)}
-                className="mt-3 flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold bg-gradient-to-r from-electric-blue to-electric-violet text-black"
+                className="flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium text-slate-300 hover:bg-white/5 hover:text-white transition-all"
               >
-                <FileText className="w-4 h-4" />
-                <span>Download Resume</span>
+                <span className="flex items-center gap-2">
+                  <FileText className="w-4 h-4 text-electric-blue" />
+                  Resume
+                </span>
+                <ArrowUpRight className="w-3.5 h-3.5 text-slate-500" />
               </a>
             </div>
           </motion.div>
