@@ -145,9 +145,10 @@ export const HeroSection: React.FC = () => {
               <span className="text-cyan-400 font-bold">
             </div>
             <div className="absolute top-2 right-3 sm:top-4 sm:right-4 flex flex-col items-end gap-0.5 sm:gap-1 text-[9px] sm:text-[10px] font-mono text-slate-500 pointer-events-none select-none z-10">
-              <span className="text-violet-400 font-bold">// ARCH: RESIDUAL-ATTN</span>
-              <span>SYNAPSES: CONNECTED</span>
+              <span className="text-violet-400 font-bold">
             </div>
+              
+            
 
             <HeroVisual3D className="w-full h-[460px] sm:h-[560px] lg:h-[660px]" />
           </motion.div>
