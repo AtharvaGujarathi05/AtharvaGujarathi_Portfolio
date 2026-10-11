@@ -142,10 +142,10 @@ export const HeroSection: React.FC = () => {
           >
             {/* Visual telemetry boundary accents */}
             <div className="absolute top-4 right-4 hidden xl:flex flex-col items-end gap-1 text-[10px] font-mono text-slate-500 pointer-events-none select-none">
-              <span className="text-cyan-400 font-bold">
+              <span className="text-cyan-400 font-bold">   </span>
             </div>
             <div className="absolute top-2 right-3 sm:top-4 sm:right-4 flex flex-col items-end gap-0.5 sm:gap-1 text-[9px] sm:text-[10px] font-mono text-slate-500 pointer-events-none select-none z-10">
-              <span className="text-violet-400 font-bold">
+              <span className="text-violet-400 font-bold">  </span>
             </div>
               
             
