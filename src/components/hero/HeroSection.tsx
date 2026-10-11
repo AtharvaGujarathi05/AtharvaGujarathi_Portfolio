@@ -55,9 +55,9 @@ export const HeroSection: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="my-2"
             >
-              <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-black tracking-tight font-display text-white uppercase leading-[1.02] select-none">
-                <span className="tracking-wide block">ATHARVA</span>
-                <span className="text-gradient-cyan-violet tracking-wide block">GUJARATHI</span>
+              <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-black tracking-tight font-display text-white leading-[1.02] select-none">
+                   <span className="tracking-wide block">Atharva</span>
+                    <span className="text-gradient-cyan-violet tracking-wide block">Gujarathi</span>
               </h1>
             </motion.div>
 
