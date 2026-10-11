@@ -146,7 +146,7 @@ export const HeroSection: React.FC = () => {
               <span>DIM: 512 ⇄ 2048</span>
               <span>LATENT MANIFOLD</span>
             </div>
-            <div className="absolute bottom-4 left-4 hidden xl:flex flex-col items-start gap-1 text-[10px] font-mono text-slate-500 pointer-events-none select-none">
+            <div className="absolute top-2 right-3 sm:top-4 sm:right-4 flex flex-col items-end gap-0.5 sm:gap-1 text-[9px] sm:text-[10px] font-mono text-slate-500 pointer-events-none select-none z-10">
               <span className="text-violet-400 font-bold">// ARCH: RESIDUAL-ATTN</span>
               <span>SYNAPSES: CONNECTED</span>
             </div>
