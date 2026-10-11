@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" class="dark scroll-smooth h-full bg-[#020308] text-slate-100">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#020308" />
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem('theme') === 'light') {
+            var d = document.documentElement;
+            d.classList.remove('dark');
+            d.classList.add('light');
+            document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f8fc');
+          }
+        } catch (e) {}
+      })();
+    </script>
+    
+    <!-- SEO & Metadata -->
+    <title>Atharva Gujarathi | Data Science, Analytics & AI Portfolio</title>
+    <meta name="description" content="Portfolio of Atharva Gujarathi, Information Technology Engineering student building intelligent experiences at the intersection of Data Science, Analytics and Artificial Intelligence." />
+    <meta name="keywords" content="Atharva Gujarathi, Data Science, Analytics, Machine Learning, Artificial Intelligence, Python, SQL, C++, Portfolio" />
+    <meta name="author" content="Atharva Gujarathi" />
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Atharva Gujarathi | Data Science, Analytics & AI Portfolio" />
+    <meta property="og:description" content="Building intelligent experiences at the intersection of Data Science, Analytics and Artificial Intelligence." />
+    <meta property="og:image" content="/preview-banner.svg" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body class="h-full bg-[#020308] text-slate-100 antialiased selection:bg-electric-blue/20 selection:text-electric-blue overflow-x-hidden">
+    <div id="root" class="min-h-full"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
